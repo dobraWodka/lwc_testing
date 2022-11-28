@@ -1,0 +1,16 @@
+<!--
+ - Created by yurii.bubis on 10/27/2022.
+ -->
+
+<!-- Paginator Parent -->
+<template>
+    <template for:each={allPositions} for:item=position>
+        <c-job-position-tile
+                class="slds-m-vertical_small"
+                key={position.Id}
+                position={position}
+                selected-positions-list={selectedPositions}
+                onaddtoselected={handleChangePositionPresence}
+        ></c-job-position-tile>
+    </template>
+</template>
