@@ -1,0 +1,43 @@
+<!--
+ - Created by yurii.bubis on 10/21/2022.
+ -->
+
+<!-- Job Position Tile -->
+<template>
+    <div class="slds-card_boundary slds-m-vertical_x-small" >
+            <a href="#" onclick={selectedPositionHandler}>
+                <div class="hover">
+                <lightning-card title={position.Name}
+                                icon-name="standard:employee_job_position">
+                    <lightning-layout class="slds-p-left_medium">
+                        <lightning-layout-item size="4">
+                            <b><p class="body-text">{salaryLabel}</p></b>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" >
+                            <p class="body-text"><lightning-formatted-number format-style="currency"
+                                                           value={position.Salary__c}
+                                                           currency-code="EUR"
+                                                           currency-display-as="symbol"
+                            ></lightning-formatted-number></p>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:true={showDetails}>
+                        <div class="info slds-p-horizontal_medium slds-m-vertical_x-small ">
+                            <template for:each={positionDetails} for:item="position">
+                                <div class="slds-grid slds-gutters column" key={position.key}>
+                                    <div class="slds-col column slds-size_3-of-12 slds-m-vertical_x-small">
+                                        <b><p>{position.key}</p></b>
+                                    </div>
+                                    <div class="slds-col column slds-size_9-of-12 slds-m-vertical_x-small">
+                                        <p>{position.value}</p>
+                                    </div>
+                                </div>
+                            </template>
+                            <button class={buttonClass} onclick={addPositionToSelected}>{buttonLabel}</button>
+                        </div>
+                    </template>
+                </lightning-card>
+                </div>
+            </a>
+    </div>
+</template>

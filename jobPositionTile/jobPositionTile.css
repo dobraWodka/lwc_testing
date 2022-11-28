@@ -1,0 +1,28 @@
+/**
+ * Created by yurii.bubis on 10/21/2022.
+ */
+a {
+    color: black;
+    text-decoration: none;
+}
+button {
+    font-size: 1rem;
+}
+.salary {
+}
+:host {
+    --slds-c-card-body-spacing-block-start: 0.25rem;
+    --slds-c-card-body-spacing-block-end: 0.25rem;
+    --slds-c-card-header-spacing-block-start: 0.5rem;
+    --slds-c-card-header-spacing-block-end: none;
+
+
+}
+.body-text {
+    font-size: 0.9rem;
+}
+
+.hover:hover {
+    outline: 2px solid rgba(145, 145, 145, 1);
+    color: rgb(20, 30, 168);
+}
