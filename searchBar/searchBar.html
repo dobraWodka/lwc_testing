@@ -1,0 +1,32 @@
+<!--
+ - Created by yurii.bubis on 10/28/2022.
+ -->
+
+<!-- Search Bar -->
+<template>
+    <lightning-layout horizontal-align="spread" class="slds-m-bottom_medium">
+        <lightning-layout-item size="6">
+            <lightning-input type="search" name="enter-position-name"
+                             label={searchLabel} class="search"
+                             onchange={handleSearchChange} value={searchKey}
+            ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="2" >
+            <lightning-input type="date" name="input-date" class="date"
+                             label={publicationDateLabel}
+                             max={today} onchange={handleDateChange}
+            ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="2" >
+            <lightning-slider
+                    label={minSalaryLabel} step="100" value="100"
+                    onchange={handleSliderChange} min="0" max="10000"
+            ></lightning-slider>
+        </lightning-layout-item>
+        <lightning-layout-item size="1">
+            <lightning-combobox label={pageSizeLabel} value="5"
+                                options={comboboxOptions} onchange={handleComboboxChange}
+            ></lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
